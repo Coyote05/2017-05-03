@@ -29,4 +29,15 @@ public class FileOperation {
             e.printStackTrace();
         }
     }
+
+    public static void fileMakerWithContent(String place, String nameAndExtension, String content){
+
+        try {
+            FileWriter fileWriter = new FileWriter(place + nameAndExtension);
+            fileWriter.write(content);
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
