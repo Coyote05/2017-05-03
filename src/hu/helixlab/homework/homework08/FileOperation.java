@@ -40,4 +40,18 @@ public class FileOperation {
             System.out.println(e.getMessage());
         }
     }
+
+    public static void fileMakerWithContent(String place, int quantity, String nameAndExtension, String content){
+
+        try {
+
+            for(int i = 1; i <= quantity; i++){
+
+                FileWriter fileWriter = new FileWriter(place + i + nameAndExtension);
+                fileWriter.write(content);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
