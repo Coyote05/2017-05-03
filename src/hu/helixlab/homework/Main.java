@@ -8,5 +8,7 @@ public class Main {
 
         FileOperation fileOperation = new FileOperation();
         fileOperation.fileMaker("C:\\Users\\C\\IdeaProjects\\2017-05-03\\src\\hu\\helixlab\\homework\\","Test.txt");
+
+        fileOperation.fileMaker("C:\\Users\\C\\IdeaProjects\\2017-05-03\\src\\hu\\helixlab\\homework\\homework08\\", 3, "Test.txt");
     }
 }

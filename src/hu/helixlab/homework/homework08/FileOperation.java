@@ -15,4 +15,18 @@ public class FileOperation {
             System.out.println(e.getMessage());
         }
     }
+
+    public static void fileMaker(String place, int quantity, String nameAndExtension){
+
+        try {
+
+            for(int i = 1; i <= quantity; i++){
+
+                FileWriter fileWriter = new FileWriter(place + i + nameAndExtension);
+                fileWriter.write("Test");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
