@@ -26,7 +26,7 @@ public class FileOperation {
                 fileWriter.write("Test");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
