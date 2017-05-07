@@ -1,7 +1,6 @@
 package hu.helixlab.homework.homework08;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class FileOperation {
 
@@ -52,6 +51,75 @@ public class FileOperation {
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    public static void printMatrixFromFile() {
+
+        String line;
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\C\\IdeaProjects\\2017-05-03\\src\\hu\\helixlab\\homework\\homework08\\matrix.txt"));
+
+            int rowsCount = 0;
+            int charactersCount = 0;
+            int numbersCount = 0;
+            int columnsCount;
+
+            while ((line = br.readLine()) != null) {
+
+                rowsCount++;
+
+                for (int i = 0; i < line.length(); i++) {
+
+                    charactersCount++;
+
+                    if (Character.isDigit(line.charAt(i))) {
+
+                        numbersCount++;
+                    }
+                }
+            }
+
+            columnsCount = numbersCount / rowsCount;
+
+            FileReader fileReader = new FileReader("C:\\Users\\C\\IdeaProjects\\2017-05-03\\src\\hu\\helixlab\\homework\\homework08\\matrix.txt");
+
+            int charFromFile;
+            int count = 0;
+            int tempCount = 0;
+            int[] temp = new int[charactersCount];
+            char[][] array = new char[rowsCount][columnsCount];
+
+            while ((charFromFile = fileReader.read()) != -1) {
+
+                if (charFromFile != 32) {
+
+                    temp[count] = charFromFile;
+                    count++;
+                }
+            }
+
+            for (int m = 0; m < rowsCount; m++) {
+
+                for (int n = 0; n < columnsCount; n++) {
+
+                    if (temp[tempCount] == 13) {
+
+                        tempCount = tempCount + 2;
+                    }
+
+                    array[m][n] = (char) temp[tempCount];
+                    System.out.print(array[m][n] + " ");
+                    tempCount++;
+                }
+                System.out.println();
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found! " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("IOException " + e.getMessage());
         }
     }
 }
