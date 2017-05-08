@@ -84,6 +84,7 @@ public class FileOperation {
                     }
                 }
             }
+            br.close();
 
             columnsCount = numbersCount / rowsCount;
 
@@ -103,6 +104,7 @@ public class FileOperation {
                     count++;
                 }
             }
+            fileReader.close();
 
             for (int m = 0; m < rowsCount; m++) {
 
