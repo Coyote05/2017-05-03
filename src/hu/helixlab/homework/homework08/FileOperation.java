@@ -24,6 +24,7 @@ public class FileOperation {
 
                 FileWriter fileWriter = new FileWriter(place + i + nameAndExtension);
                 fileWriter.write("Test");
+                fileWriter.close();
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
