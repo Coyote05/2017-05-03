@@ -36,6 +36,7 @@ public class FileOperation {
         try {
             FileWriter fileWriter = new FileWriter(place + nameAndExtension);
             fileWriter.write(content);
+            fileWriter.close();
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
